@@ -27,6 +27,7 @@ public class LoginController {
 	
 	@RequestMapping("/")
 	public String login() {
+		System.out.println("//////////////////////////////");
 		logger.error(" >>> /");
 		return "redirect:/login";
 	}

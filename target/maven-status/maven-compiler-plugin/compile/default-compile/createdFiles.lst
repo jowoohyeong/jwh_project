@@ -19,6 +19,5 @@ com\spring\mybatis\board\service\BoardInsertService.class
 com\spring\mybatis\member\dao\MemberDAO.class
 com\spring\mybatis\board\service\BoardFileService.class
 com\spring\mybatis\login\dto\LoginDTO.class
-com\spring\mybatis\board\service\BoardReadService.class
 com\spring\mybatis\board\service\BoardService.class
 com\spring\mybatis\board\BoardViewDTO.class
