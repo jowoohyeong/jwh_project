@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="boardFile">
+	
+	<select id="fileList" resultType= "com.spring.mybatis.file.dto.BoardFileDTO" >
+		select * from board_file where b_id= #{id};
+	</select>
+
+	<insert id="insert">
+		insert into board_file (b_id, bf_fileName, bf_uploadFileName, bf_filePath)
+		values (#{b_id}, #{bf_fileName}, #{bf_uploadFileName}, #{bf_filePath})
+	</insert>
+	
+	<delete id ="deleteAll">
+		delete from board_file where b_id= #{id}
+	</delete>
+	
+	<delete id ="deleteOne">
+		delete from board_file where bf_id= #{id}
+	</delete>
+	
+</mapper>

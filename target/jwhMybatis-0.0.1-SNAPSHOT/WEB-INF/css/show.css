@@ -1,0 +1,28 @@
+
+body{
+	margin : 0 auto;
+}
+table{
+	width:800px;
+    margin: 0 auto;
+}
+table, th, td{
+	border : 1px solid black;
+	border-collapse: collapse;
+	
+}
+th{
+	background-color: gray;
+}
+tr{
+	height : 30px;
+}
+.cent{
+	text-align: center;
+}
+textarea{
+	width: 750px;
+	height: 200px;
+	resize: none;
+	border: none;
+}
