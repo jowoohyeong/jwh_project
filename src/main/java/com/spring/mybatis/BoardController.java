@@ -17,21 +17,20 @@ import org.springframework.web.servlet.view.RedirectView;
 import com.spring.mybatis.board.Board;
 import com.spring.mybatis.board.service.BoardDeleteService;
 import com.spring.mybatis.board.service.BoardInsertService;
-import com.spring.mybatis.board.service.BoardReadService;
 import com.spring.mybatis.board.service.BoardService;
 import com.spring.mybatis.board.service.BoardUpdateService;
 import com.spring.mybatis.main.dto.BoardListDTO;
 import com.spring.mybatis.main.dto.BoardSearchDTO;
 import com.spring.mybatis.main.dto.PagingDTO;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 public class BoardController {
 	private Logger logger = LoggerFactory.getLogger(getClass());
-	@Autowired
-	BoardService bdservice;
 
 	@Autowired
-	BoardReadService boardread;
+	BoardService boardService;
 
 	@Autowired
 	BoardInsertService boardinsert;
@@ -44,11 +43,10 @@ public class BoardController {
 
 	@RequestMapping("/main")
 	public String main(BoardSearchDTO searchDTO, PagingDTO pagingDTO, Model model) {
-System.out.println("\n----------------");
+		System.out.println("\n----------------");
 		logger.info("BoardController >> main >> start!");
-		BoardListDTO listDTO = new BoardListDTO();
 
-		listDTO = bdservice.service(searchDTO, pagingDTO);
+		BoardListDTO listDTO = boardService.boardList(searchDTO, pagingDTO);
 
 		model.addAttribute("listDTO", listDTO);
 
@@ -56,7 +54,9 @@ System.out.println("\n----------------");
 	}
 
 	@RequestMapping("/write")
-	public String write() {
+	public String write(HttpServletRequest request) {
+		// request.getSession().getAttribute("userId");
+
 		return "write";
 	}
 
@@ -84,7 +84,7 @@ System.out.println("\n----------------");
 
 	@RequestMapping("/write_reply")
 	public String write_reply(Model model, Board board) {
-		model.addAttribute("list", bdservice.writeReply(board));
+		model.addAttribute("list", boardService.writeReply(board));
 		return "write_reply";
 	}
 	
@@ -98,13 +98,13 @@ System.out.println("\n----------------");
 
 	@RequestMapping("/selectone")
 	public String selectone(Model model, Board board) {
-		model.addAttribute("listDTO", boardread.service(board));
+		model.addAttribute("listDTO", boardService.boardDetail(board));
 		return "selectone";
 	}
 
 	@GetMapping("/update")
 	public String update(Model model, Board board) {
-		model.addAttribute("listDTO", boardread.service(board));
+		model.addAttribute("listDTO", boardService.boardDetail(board));
 		return "update";
 	}
 
@@ -127,7 +127,7 @@ System.out.println("\n----------------");
 	
 	@RequestMapping("/xJoin")		//selectOne example 
 	public String xJoin(Model model, Board board) {
-		model.addAttribute("viewDTO", boardread.service(board));
+		model.addAttribute("viewDTO", boardService.boardDetail(board));
 		return "xJoin";
 	}
 	@ResponseBody

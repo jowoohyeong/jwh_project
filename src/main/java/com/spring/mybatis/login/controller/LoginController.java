@@ -21,7 +21,7 @@ public class LoginController {
 	private Logger logger = LoggerFactory.getLogger(getClass());
 
 	@Autowired
-	BoardService bdservice;
+	BoardService boardService;
 	@Autowired
 	LoginService boardlogin;
 	
@@ -32,6 +32,7 @@ public class LoginController {
 	}
 	@RequestMapping("/login")
 	public String login(HttpSession session){
+		logger.info("LoginController.java . login");
 		return "/login";
 	}
 	@RequestMapping("/signup")

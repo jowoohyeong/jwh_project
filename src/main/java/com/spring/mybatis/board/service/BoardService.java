@@ -3,6 +3,7 @@ package com.spring.mybatis.board.service;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.spring.mybatis.file.dao.BoardFileDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,10 +16,12 @@ import com.spring.mybatis.main.dto.PagingDTO;
 @Service
 public class BoardService {
 	@Autowired
-	private BoardDAO dao;
-	
-	
-	public BoardListDTO service(BoardSearchDTO searchDTO, PagingDTO pagingDTO) {
+	private BoardDAO boardDao;
+
+	@Autowired
+	private BoardFileDAO filedao;
+
+	public BoardListDTO boardList(BoardSearchDTO searchDTO, PagingDTO pagingDTO) {
 		BoardListDTO listDTO = new BoardListDTO(); 	// 반환
 
 		Map<String, Object> map = new HashMap<String, Object>();
@@ -27,12 +30,12 @@ public class BoardService {
 		
 		if(searchDTO.getSearchOption() != null && !searchDTO.getSearchOption().equals("")
 				&& searchDTO.getSearchText() != null && !searchDTO.getSearchText().equals("")) {
-			listDTO.setBoardList(dao.searchlist(map));
-			pagingDTO.setTotalCount(dao.totalSearchPageCount(searchDTO));
+			listDTO.setBoardList(boardDao.searchlist(map));
+			pagingDTO.setTotalCount(boardDao.totalSearchPageCount(searchDTO));
 		}
 		else{
-			listDTO.setBoardList(dao.list(map));
-			pagingDTO.setTotalCount(dao.totalPageCount());
+			listDTO.setBoardList(boardDao.list(map));
+			pagingDTO.setTotalCount(boardDao.totalPageCount());
 		}
 		
 		pagingDTO.setPagingHtml(setHtml(pagingDTO));		// jwh 수정 가능
@@ -41,7 +44,11 @@ public class BoardService {
 		listDTO.setSearchDTO(searchDTO);
 		
 		return listDTO;
-	} 
+	}
+
+	public Board boardDetail(Board board) {
+		return boardDao.boardDetail(board);
+	}
 	public PagingDTO pageNumSet(PagingDTO pagingDTO){
 		pagingDTO.setCurrentPage((pagingDTO.getCurrentPage()-1)*pagingDTO.getBlockCount());
 		return pagingDTO;
@@ -102,14 +109,14 @@ public class BoardService {
 
 	/*
 	 * public List<Board> searchService(PagingDTO pagingDTO){ return
-	 * dao.search(pagingDTO); }
+	 * boardDao.search(pagingDTO); }
 	 */
 	/*
-	 * public long totalPageCnt(){ return dao.totalPageCount()/10 +1; }
+	 * public long totalPageCnt(){ return boardDao.totalPageCount()/10 +1; }
 	 */
 
 	public Board writeReply(Board board) {
-		return dao.view(board);
+		return boardDao.boardDetail(board);
 	}
 	
 }

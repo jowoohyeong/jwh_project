@@ -28,8 +28,8 @@ public class BoardDAO {
 	public List<Board> search(PagingDTO pagingDTO) {		
 		return sqlSession.selectList("board.search", pagingDTO);
 	}
-	public Board view(Board board) {
-		return sqlSession.selectOne("board.view", board);
+	public Board boardDetail(Board board) {
+		return sqlSession.selectOne("board.boardDetail", board);
 	}
 	public void update(Board bd) {
 		sqlSession.selectOne("board.update", bd);

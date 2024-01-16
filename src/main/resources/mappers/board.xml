@@ -33,8 +33,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		limit #{pagingDTO.currentPage},#{pagingDTO.blockCount}
 	</select>
 			
-	<select id="view" resultMap="boardResult">
-		select * from board b left outer join board_file bf on (b.id = bf.b_id)	where id = #{id}
+	<select id="boardDetail" resultMap="boardResult">
+		select *
+		from board b
+		left outer join board_file bf
+		    on (b.id = bf.b_id)
+		where id = #{id}
 	</select>
 	
 	<select id="count" resultType = "int">
