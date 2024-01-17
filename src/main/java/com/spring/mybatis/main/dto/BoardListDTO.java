@@ -16,5 +16,8 @@ public class BoardListDTO {
 	private List<Board> boardList = new ArrayList<Board>();	
 	private PagingDTO pagingDTO = new PagingDTO();
 	private BoardSearchDTO searchDTO = new BoardSearchDTO();
-	
+
+
+	private String searchOption;
+	private String searchText;
 }

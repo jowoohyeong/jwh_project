@@ -92,7 +92,7 @@
 			for(var i = 0; i < deleteFilesId.length; i++){
 				formData.append("deleteFile", deleteFilesId[i]);
 			}
-			formData.append("id", <%=list.getId()%>);
+			formData.append("id", <%=list.getSeq()%>);
 			formData.append("title", $("#title").val());
 			formData.append("writer", $("#writer").val());
 			formData.append("content", $("#content").val());
@@ -128,7 +128,7 @@
 	
 	<h1 class="cent"><a href ='main'>BOARD</a></h1>
 	<form method="post">	
-		<input type="hidden" name ="id" value =<%=list.getId()%> >
+		<input type="hidden" name ="id" value =<%=list.getSeq()%> >
 		<table board ="1">
 			<tr>
 				<th>TITLE:</th>

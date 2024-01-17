@@ -83,7 +83,7 @@
 <body>
 	<h1 class="cent"><a href ='main'>BOARD</a></h1>
     <div class= "container">
-    	<form id ="forms" method="post" action="writeAct" enctype="multipart/form-data">
+    	<form id ="forms" method="post" action="write" enctype="multipart/form-data">
     		<div class= "row">
     			<input type="hidden" name="reid" value=999 >
     			<table style= "text-align: center; boarder: 1px solid #dddddd">

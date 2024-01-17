@@ -10,7 +10,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="bf_filePath" column="bf_filePath"/>
 	</resultMap>
 	<resultMap type ="com.spring.mybatis.board.Board" id="boardResult">
-		<result property="id" column="id"/>
+		<result property="seq" column="seq"/>
 		<result property="title" column="title"/>
 		<result property="content" column="content"/>
 		<result property="writer" column="writer"/>
@@ -22,12 +22,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</resultMap>
 	
 	<select id="list" parameterType ="map" resultType = "com.spring.mybatis.board.Board">
-		select * from board
+		select *
+		from board
 		order by reid desc, reord asc
 		limit #{pagingDTO.startNo},#{pagingDTO.blockCount}
 	</select>
 	<select id="searchlist" parameterType ="map" resultType = "com.spring.mybatis.board.Board">
-		select * from board
+		SELECT *
+		FROM BOARD
 		where ${searchDTO.searchOption} like concat('%',#{searchDTO.searchText},'%')
 		order by reid desc, reord asc
 		limit #{pagingDTO.currentPage},#{pagingDTO.blockCount}
@@ -38,7 +40,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		from board b
 		left outer join board_file bf
 		    on (b.id = bf.b_id)
-		where id = #{id}
+		where seq = #{seq}
 	</select>
 	
 	<select id="count" resultType = "int">
@@ -52,11 +54,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<update id="update">
 		update board set title=#{title}, content= #{content}
-		where id= #{id}
+		where seq= #{seq}
 	</update>
 	
 	<delete id ="delete">
-		delete from board where id= #{id}
+		delete from board where seq= #{seq}
 	</delete>
 	
 	<insert id ="write" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
@@ -81,7 +83,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	
 	<update id="updateReid">
-		update board set reid=#{id} where reid= 999
+		update board set reid=#{seq} where reid= 999
 	</update>
 
 </mapper>

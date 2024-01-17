@@ -91,7 +91,7 @@
 				},
 				type : "POST",
 				enctype: "multipart/form-data",
-				url : "/writeAct",
+				url : "/write",
 				data : formData,
 				dataType : "text",
 				contentType : false,

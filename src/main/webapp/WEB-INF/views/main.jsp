@@ -72,12 +72,12 @@
 		<%
 		for(Board board : boardList ){
 			out.println("<tr>");
-			out.println("	<td>" + board.getId() + "</td>");
+			out.println("	<td>" + board.getSeq() + "</td>");
 			out.print("	<td>");
 			if(board.getRelev()>0){
 				for(int i=0;i<board.getRelev();i++)	out.print("　");
 			}
-			out.println("<a href=\"javascript:goDetail('" + board.getId() + "')\">" + board.getTitle() + "</td>");
+			out.println("<a href=\"javascript:goDetail('" + board.getSeq() + "')\">" + board.getTitle() + "</td>");
 			out.println("	<td>" + board.getWriter() + "</td>");
 			out.println("	<td>" + board.getCreated_date() + "</td>");
 			out.println("</tr>");
@@ -85,7 +85,7 @@
 		%>
 		<tr>
 			<td>
-				<button onclick="javascript:formSumbit('/write')">글쓰기</button>
+				<button onclick="javascript:formSumbit('/writeForm')">글쓰기</button>
 			</td>
 			<td colspan = "3" style="float: right;">
 	 			<select id="searchOp" name="selectOp">

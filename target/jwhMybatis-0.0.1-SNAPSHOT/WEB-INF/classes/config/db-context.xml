@@ -24,7 +24,7 @@
 		<!-- <property name="configLocation" value="classpath:/mybatis-config.xml"></property> -->
 		<property name="dataSource" ref="dataSource" />
 		<property name="mapperLocations" value="classpath:mappers/*.xml" />
-		<!-- typeAliasesPackage 속성 사용시 value의 경로 하위 디렉터리 클래스들을 모두 mybatis mappersXml에서 
+		<!-- typeAliasesPackage 속성 사용시 value의 경로 하위 디렉터리 클래스들을 모두 mybatis mappersXml에서
 			parameter type이나 resultType으로 사용가능 -->
 		<property name="typeAliasesPackage" value="com.spring.mybatis.dto" />
 	</bean>

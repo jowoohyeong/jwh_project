@@ -14,11 +14,11 @@ import lombok.ToString;
 @Setter
 @ToString
 public class Board {
-	private int id;
-	private String title;
-	private String content;
-	private String writer;
-	private Date created_date;
+	private 	int		seq;
+	private 	String	title;
+	private 	String	content;
+	private 	String	writer;
+	private 	Date 	created_date;
 	
 	private int reid;
     private int relev;		/** 답글 계층 **/

@@ -81,9 +81,9 @@ textarea{
 		</tr>
 		<tr>
 			<td colspan="2">
-				<button onclick="location.href='update?id=<%=list.getId()%>'">수정</button>
-				<button onclick="location.href='write_reply?id=<%=list.getId()%>'">답글</button>
-				<button onclick="location.href='delete?id=<%=list.getId()%>'">삭제</button>
+				<button onclick="location.href='update?id=<%=list.getSeq()%>'">수정</button>
+				<button onclick="location.href='write_reply?id=<%=list.getSeq()%>'">답글</button>
+				<button onclick="location.href='delete?id=<%=list.getSeq()%>'">삭제</button>
 				<button onclick="location.href='main'">목록</button>			
 			</td>
 		</tr>

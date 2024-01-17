@@ -15,10 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.view.RedirectView;
 
 import com.spring.mybatis.board.Board;
-import com.spring.mybatis.board.service.BoardDeleteService;
-import com.spring.mybatis.board.service.BoardInsertService;
 import com.spring.mybatis.board.service.BoardService;
-import com.spring.mybatis.board.service.BoardUpdateService;
 import com.spring.mybatis.main.dto.BoardListDTO;
 import com.spring.mybatis.main.dto.BoardSearchDTO;
 import com.spring.mybatis.main.dto.PagingDTO;
@@ -32,15 +29,6 @@ public class BoardController {
 	@Autowired
 	BoardService boardService;
 
-	@Autowired
-	BoardInsertService boardinsert;
-
-	@Autowired
-	BoardUpdateService boardupdate;
-
-	@Autowired
-	BoardDeleteService boarddelete;
-
 	@RequestMapping("/main")
 	public String main(BoardSearchDTO searchDTO, PagingDTO pagingDTO, Model model) {
 		System.out.println("\n----------------");
@@ -53,17 +41,17 @@ public class BoardController {
 		return "main";
 	}
 
-	@RequestMapping("/write")
-	public String write(HttpServletRequest request) {
+	@RequestMapping("/writeForm")
+	public String writeForm(HttpServletRequest request) {
 		// request.getSession().getAttribute("userId");
 
 		return "write";
 	}
 
 	@ResponseBody
-	@RequestMapping(value = "/writeAct", produces = "text/html;charset=UTF-8")
-	public String writeAct(Board board, @RequestParam(name = "files", required = false) List<MultipartFile> files) {
-		return boardinsert.service(board, files);
+	@RequestMapping(value = "/write", produces = "text/html;charset=UTF-8")
+	public String write(Board board, @RequestParam(name = "files", required = false) List<MultipartFile> files) {
+		return boardService.boardInsert(board, files);
 	}
 
 	/*
@@ -77,7 +65,7 @@ public class BoardController {
 	 * 
 	 * @RequestParam(name = "files", required = false) List<MultipartFile> files) {
 	 * System.out.println(board); System.out.println(files);
-	 * boardinsert.service(board, files);
+	 * boardinsert.boardInsert(board, files);
 	 * 
 	 * return "SUCCESS"; }
 	 */
@@ -93,7 +81,7 @@ public class BoardController {
 	public String write_replyAct(Board board,
 			@RequestParam(name = "files", required = false) List<MultipartFile> files) {
 		
-		return boardinsert.service2(board, files);
+		return boardService.boardInsert_service2(board, files);
 	}
 
 	@RequestMapping("/selectone")
@@ -113,12 +101,12 @@ public class BoardController {
 	public String Act(Board board, @RequestParam(name = "files", required = false) List<MultipartFile> files,
 			@RequestParam(name = "deleteFile", required = false) int[] deleteFile) {
 
-		return boardupdate.service(board, files, deleteFile);
+		return boardService.update(board, files, deleteFile);
 	}
 
 	@GetMapping("/delete")
 	public RedirectView delete(int id) {
-		boarddelete.service(id);
+		boardService.delete(id);
 		return new RedirectView("/main");
 	}
 	
