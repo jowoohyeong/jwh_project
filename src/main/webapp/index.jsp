@@ -8,7 +8,7 @@
 </head>
 <body>
  <script>
-    window.self.location = "/login";
+    window.self.location = "/main";
 </script>
  
 </body>
