@@ -14,7 +14,7 @@
 
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 <!--		<property name="driverClassName"	value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy" />-->
-<!--		<property name="url" 				value="jdbc:log4jdbc:mariadb://127.0.0.1:3306/board" />-->
+<!--		<property name="url" 				value="jdbc:log4jdbc:sqlserver://127.0.0.1:3306/board" />-->
 		<property name="driverClassName"	value="org.mariadb.jdbc.Driver" />
 		<property name="url" 				value="jdbc:mariadb://127.0.0.1:3306/board" />
 		<property name="username" 			value="root" />
@@ -32,13 +32,5 @@
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
-
-	<bean id="before" class="com.spring.mybatis.aop.testAop"/>
-	<aop:config>
-		<aop:pointcut id="testAOP" expression="execution(* *Controller.*(..))"/>
-		<aop:aspect ref="before">
-			<aop:before pointcut-ref="testAOP" method="testAopStart"/>
-		</aop:aspect>
-	</aop:config>
 
 </beans>

@@ -10,11 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="374f51fe-a5a3-42e0-bdd5-ac72dd33a503" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/DBcreate" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/mybatis/aop/testAop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/mybatis/aop/testAop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config/db-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/db-context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/application-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/application-context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/dispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/dispatcher-servlet.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jwhMybatis-0.0.1-SNAPSHOT/WEB-INF/classes/config/db-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/jwhMybatis-0.0.1-SNAPSHOT/WEB-INF/classes/config/db-context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jwhMybatis-0.0.1-SNAPSHOT/WEB-INF/classes/log4j.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/jwhMybatis-0.0.1-SNAPSHOT/WEB-INF/classes/log4j.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jwhMybatis-0.0.1-SNAPSHOT/WEB-INF/config/application-context.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,25 +60,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;패싯&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;2d0a13a30c66c0974e3bb96563114ec0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "전역 라이브러리",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings",
+    "spring.configuration.checksum": "2d0a13a30c66c0974e3bb96563114ec0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\workspace\jwhMybatis\src\main\resources\config" />
       <recent name="D:\workspace\jwhMybatis\target\jwhMybatis-0.0.1-SNAPSHOT" />
     </key>
   </component>
@@ -225,7 +232,8 @@
       <workItem from="1705543293855" duration="11526000" />
       <workItem from="1705568343557" duration="132000" />
       <workItem from="1705625469585" duration="1593000" />
-      <workItem from="1705631720740" duration="2959000" />
+      <workItem from="1705631720740" duration="3005000" />
+      <workItem from="1705645638172" duration="2036000" />
     </task>
     <task id="LOCAL-00002" summary="프로젝트 정리">
       <option name="closed" value="true" />
@@ -251,7 +259,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705627059024</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="프로젝트 설정">
+      <option name="closed" value="true" />
+      <created>1705644307203</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1705644307203</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,7 +275,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="프로젝트 정리" />
-    <option name="LAST_COMMIT_MESSAGE" value="프로젝트 정리" />
+    <MESSAGE value="프로젝트 설정" />
+    <option name="LAST_COMMIT_MESSAGE" value="프로젝트 설정" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
