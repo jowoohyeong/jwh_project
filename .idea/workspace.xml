@@ -9,19 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="374f51fe-a5a3-42e0-bdd5-ac72dd33a503" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/mybatis/aop/testAop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/mybatis/aop/testAop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config/db-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/db-context.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/application-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/application-context.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/dispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/dispatcher-servlet.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jwhMybatis-0.0.1-SNAPSHOT/WEB-INF/classes/config/db-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/jwhMybatis-0.0.1-SNAPSHOT/WEB-INF/classes/config/db-context.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jwhMybatis-0.0.1-SNAPSHOT/WEB-INF/classes/log4j.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/jwhMybatis-0.0.1-SNAPSHOT/WEB-INF/classes/log4j.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jwhMybatis-0.0.1-SNAPSHOT/WEB-INF/config/application-context.xml" beforeDir="false" />
-    </list>
+    <list default="true" id="374f51fe-a5a3-42e0-bdd5-ac72dd33a503" name="변경" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -233,7 +221,7 @@
       <workItem from="1705568343557" duration="132000" />
       <workItem from="1705625469585" duration="1593000" />
       <workItem from="1705631720740" duration="3005000" />
-      <workItem from="1705645638172" duration="2036000" />
+      <workItem from="1705645638172" duration="2222000" />
     </task>
     <task id="LOCAL-00002" summary="프로젝트 정리">
       <option name="closed" value="true" />
@@ -267,7 +255,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705644307203</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="프로젝트 설정">
+      <option name="closed" value="true" />
+      <created>1705647858124</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1705647858124</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
